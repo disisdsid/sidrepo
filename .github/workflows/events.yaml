@@ -5,7 +5,6 @@ on:
         types: [opened, assigned, reopened, synchronize]
     issues:
         types: [opened]
-
 jobs:
     checkout-test:
         runs-on: ubuntu-latest
