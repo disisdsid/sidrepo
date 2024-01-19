@@ -15,4 +15,4 @@ jobs:
                     repo: context.repo.repo,
                     issue_numer: context.repo.number,
                     body: 'Thanks for Contributing Coder!',
-                    }):
+                    });
