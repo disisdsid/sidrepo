@@ -32,7 +32,7 @@ on:
 
 jobs:
     log-info:
-        runs-on: ubuntu-latet
+        runs-on: ubuntu-latest
         steps:
             - run: echo $GITHUB_REF
             - run: |
