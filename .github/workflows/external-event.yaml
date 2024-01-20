@@ -6,4 +6,4 @@ jobs:
     echo-a-string:
         runs-on: ubuntu-latest
         steps:
-            - run: eccho "Repository Dispatch"
+            - run: echo "Repository Dispatch"
