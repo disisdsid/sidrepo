@@ -13,7 +13,6 @@ jobs:
                     github.rest.issues.createComment({
                     owner: context.repo.owner,
                     repo: context.repo.repo,
-                    issue_numer: context.repo.number,
-                    
+                    issue_number: context.repo.number,
                     body: 'Thanks for Contributing!'
                     });
