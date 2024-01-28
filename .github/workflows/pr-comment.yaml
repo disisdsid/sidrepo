@@ -8,7 +8,7 @@ jobs:
         permissions:
           issues: read
         steps:
-           - name: Comment on New PRs
+           - name: Comment on New PR
              uses: actions/github-script@v6
              with:
                 github-token: ${{ secrets.GITHUB_TOKEN }}
