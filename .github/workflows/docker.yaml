@@ -21,6 +21,6 @@ jobs:
       - name: Set up Docker
         run: docker info
       - name: Run Docker Image with Entry Point
-        run: docker run --entrypoint /usr/local/bin/code node:18.16-alpine3.17 -p 2+3
+        run: docker run --entrypoint=node node:18.16-alpine3.17 -p 2+3
       - name: Log Node Version
         run: docker run node:18.16-alpine3.17 -v
