@@ -36,7 +36,7 @@ jobs:
               uses: docker://node:18.16-alpine3.17
               with:
                   args: -v
-            - name: Show File Contents 
+            - name: Show File Content
               uses: docker://node:18.16-alpine3.17
               with:
                   entrypoint: cat
