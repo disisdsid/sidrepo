@@ -1,4 +1,4 @@
-name: Docket
+name: Docker
 on: [workflow_dispatch]
 
 jobs:
