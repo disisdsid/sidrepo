@@ -1,0 +1,16 @@
+name: Using Reusable Workflow
+on:
+    workflow_dispatch:
+        inputs:
+            name:
+                description: "Input Description"
+                type: string
+                default: "Sid"
+                required: true
+jobs:
+    caliing-a-reusable-wf:
+        uses: disisdsid/newwebapp/.github/workflows/reusable.yaml@main
+        with: 
+            name: ${{ inputs.name }}
+        secrets:
+            access-token: ${{ secrets.ACCESS_TOKEN }}    
