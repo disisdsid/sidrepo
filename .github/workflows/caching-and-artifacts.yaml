@@ -28,7 +28,7 @@ jobs:
         with:
             name: code-coverage
             path: coverage
-            retention-days: 10
+            retention-days: 8
       - name: Use Axios
         uses: actions/github-script@v6
         with:
