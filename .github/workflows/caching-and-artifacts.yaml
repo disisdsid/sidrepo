@@ -1,17 +1,23 @@
 name: Caching and Artifacts
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
 
 jobs:
-    use-axios:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            - name: Install Dependenciess
-              run: npm install
-            - name: Use Axios
-              uses: actions/github-script@v6
-              with:
-                script: |
-                    const axios: require('axios');
-                    const res: await axios('https://icanhazdadjoke.com/', { headers: { Accept: 'text/plain' } } ) 
-                    console.log(res.data)
+  use-axios:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: npm install
+      - name: Use Axios
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const axios = require('axios');
+            axios('https://icanhazdadjoke.com/', { headers: { Accept: 'text/plain' } })
+              .then(response => {
+                console.log(response.data);
+              })
+              .catch(error => {
+                console.error('Error fetching joke:', error.message);
+              });
