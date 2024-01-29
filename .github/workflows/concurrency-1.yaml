@@ -1,5 +1,5 @@
-name: Concurrency 1
-run-name: Concurrency 1 (${{ inputs.environment }})
+name: Concurrency 2
+run-name: Concurrency 2 (${{ inputs.environment }})
 on: 
     workflow_dispatch:
         inputs:
