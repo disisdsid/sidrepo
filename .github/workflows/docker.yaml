@@ -1,36 +1,24 @@
 name: Docker
-on: [workflow_dispatch]
+on:
+  workflow_dispatch
 
 jobs:
-    docker-job:
-        runs-on: ubuntu-latest
-        container: 
-            image: node:20.3-alpine3.17
-            # credentials:
-            #     username:
-            #     password:
-            env:
-                API_URL: some-url.com
-            ports:
-                - 80
-            # volumes:
-            #     - vol_name: /path/in/container
-            #     - path/to/container
-            #     - path/in/host:/path/in/container  
-            # options:  --cpus 1        
-        steps:
-            - name: Log Nodes & OS Versions
-              run: |
-                node -v
-                cat /etc/os-release
-            - name: log env
-              run: echo $API_URL
-            - name: container in step 
-              uses: docker://node:18.16-alpine3.17
-              with:
-                entrypoint: /usr/local/bin/code
-                args: -p 2+3 
-            - name: Log node version 
-              uses: docker://node:18.16-alpine3.17
-              with:
-                  args: -v
+  docker-job:
+    runs-on: ubuntu-latest
+    container:
+      image: node:20.3-alpine3.17
+      env:
+        API_URL: some-url.com
+      ports:
+        - 80
+    steps:
+      - name: Log Nodes & OS Versions
+        run: |
+          node -v
+          cat /etc/os-release
+      - name: Log env
+        run: echo $API_URL
+      - name: Run Docker Image with Entry Point
+        run: docker run --entrypoint /usr/local/bin/code node:18.16-alpine3.17 -p 2+3
+      - name: Log Node Version
+        run: docker run node:18.16-alpine3.17 -v
