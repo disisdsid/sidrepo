@@ -7,6 +7,12 @@ on:
                 value: ${{ jobs.generate-outputs.outputs.date }}
 
 jobs:
+    nested-workflow-call:
+        uses: disisdsid/newwebapp/.github/workflows/reusable.yaml@main
+        with: 
+            name: 'Sid'
+        secrets:
+            access-token: ${{ secrets.ACCESS_TOKEN }}
     generate-outputs:
         runs-on: ubuntu-latest
         outputs:
