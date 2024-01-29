@@ -3,7 +3,7 @@ on: [workflow_dispatch]
 
 jobs:
     docker-job:
-        runs-on: ubuntu-latset
+        runs-on: ubuntu-latest
         container: 
             image: node:20.3-alpine3.17
             # credentials:
