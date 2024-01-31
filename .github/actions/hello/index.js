@@ -3,7 +3,7 @@ try {
     const core = require("@actions/core");
     const github = require("@actions/github");
 
-
+    throw new Error('throw some error');
     core.debug('Debug Message');
     core.warning('Warning message');
     core.error("Error message");
