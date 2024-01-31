@@ -7,7 +7,7 @@ on:
                 required: true
                 type: string
             body: 
-                description: issue body
+                description: issue a body
                 default: ""
                 type: string
 
