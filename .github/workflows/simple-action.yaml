@@ -10,7 +10,7 @@ jobs:
               id: greet
               uses: ./.github/actions/hello
               with: 
-                who_to_greet: Sid
+                who_to_greet: 'Sid'
             - name: Log greeting Time
               run: echo "${{ steps.greet.outputs.time }}"
             - name: Log Env Var
