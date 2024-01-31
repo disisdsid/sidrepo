@@ -13,4 +13,4 @@ jobs:
                 upload_joke: true
                 slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
             - name: Display joke output
-              run: echo '${{ steps.slack-joke.outputs.joke }}'
+              run: echo "${{ steps.joke.outputs.random_joke }}"

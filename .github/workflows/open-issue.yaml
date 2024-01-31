@@ -1,0 +1,24 @@
+name: open issue
+on: 
+    workflow_dispatch:
+        inputs:
+            title:
+                description: issue title
+                required: true
+                type: string
+            body: 
+                description: issue body
+                default: ""
+                type: string
+
+jobs:
+    open-issue:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: disisdsid/open-issue-action@main
+              with:
+                token: ${{ secrets.GITHUB_TOKEN }}
+                title: ${{ inputs.title }}
+                body: ${{ inputs.body }}
+
