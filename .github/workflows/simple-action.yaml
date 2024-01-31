@@ -9,7 +9,7 @@ jobs:
             - name: send a joke on slack
               uses: ./.github/actions/slack-joke
               with: 
-                slack_username: disisdsid
+                slack_username: siddhanta.dash
                 upload_joke: true
                 slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
             - name: Display joke output
